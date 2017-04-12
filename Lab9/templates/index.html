@@ -1,0 +1,41 @@
+<html>
+   <head>
+      <title> Alum - Account Creation</title>
+   </head>
+
+   <!-- get flashed messages -->
+   {% with messages = get_flashed_messages() %}
+      {% if messages %}
+         {% for message in messages %}
+            <h1> {{ message }} </h1>
+         {% endfor %}
+     {% endif %}
+   {% endwith %}
+
+   <body>
+      <h1>Account Info?</h1>
+
+      <form method=post action="">
+      Please enter your information
+      <br>
+      Full name:
+         {{ template_form.name_field }}
+      <br>
+      Graduation Year:
+         {{ template_form.year_field }}
+      <br>
+      Graduation semester
+         {{ template_form.select_field }}
+      <br>
+      Agree to recive newsletter?
+         {{ template_form.boolean_field }}
+      <br>
+         {% if result != None %}
+            {{ result }}
+         {% endif %}
+      <br>
+        <input type=submit value="Create Account!">
+      </form>
+      
+   </body>
+</html>
